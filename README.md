@@ -13,19 +13,30 @@ How to use?
 Select your type of socket, client or server. Whatever you choose inherit the selected class and use these parameters:
 
 For Client class:
+
     - Host to connect.
     - Port to connect.
+    
+    
 For Server class:
-    - Hosts to listen.
+
+    - Address to listen.
     - Port to listen.
 
 
 How is the setting up?
 -------------------------------------------------
 Just write the following line on your .pro file
-QT       += network
+
+    QT       += network
 
 
 How I analyze the incoming data?
 -----------------------------------------------------
-Just overwrite the virtual method dataAnalizer(QString) and you are able to readingz the incoming data. Simple eh?
+Just overwrite the virtual method dataAnalizer(QString) and you are able to reading the incoming data. 
+Simple eh?
+
+Credits to:
+
+    - Me, Diego Juliao Armenta ( @dianjuar )
+    - The youtube channel VoidRealms
