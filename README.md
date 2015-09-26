@@ -36,7 +36,8 @@ How I analyze the incoming data?
 Just overwrite the virtual method dataAnalizer(QString) and you are able to reading the incoming data. 
 Simple eh?
 
-Credits to:
+Credits
+----------------------------------
 
     - Me, Diego Juliao Armenta ( @dianjuar )
     - The youtube channel VoidRealms
