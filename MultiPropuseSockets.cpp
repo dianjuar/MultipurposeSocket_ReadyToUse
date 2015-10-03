@@ -21,6 +21,7 @@ Base::DataReceiver::DataReceiver(QTcpSocket *socket)
 
 void Base::DataReceiver::readyRead()
 {
+    qDebug()<<"";
     qDebug()<<("*********Reading**********");
     QString s( socket->readAll() );
     qDebug()<<s;
