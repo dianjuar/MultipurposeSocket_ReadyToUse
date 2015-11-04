@@ -41,19 +41,21 @@ Client::Client(QString host, int port):
 
 void Client::connectToHost()
 {
+    connect(&socket, SIGNAL(connected()), this, SLOT(connected())); //necesary to show alerts if connected.
+
     socket.connectToHost(host, port);
 
     connected_B = socket.waitForConnected(3000);
 
     if(connected_B)//connected
     {
-        connect(&socket, SIGNAL(connected()), this, SLOT(connected()));
         connect(&socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
         connect(&socket, SIGNAL(bytesWritten(qint64)), this, SLOT(bytesWritten(qint64)));
         connect(&socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
     }
     else
     {
+        disconnect(&socket,SIGNAL(connected()),this,SLOT(connected())); //if not connected disconnect the signal
         qDebug()<<"ERROR connecting to-> "<<host<<":"<<port;
     }
 }
