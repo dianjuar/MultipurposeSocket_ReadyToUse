@@ -100,6 +100,7 @@ namespace Network
        int get_port()            { return port; }
 
     signals:
+       void newIncomingConnection();
 
     public slots:
        void newConnection();
