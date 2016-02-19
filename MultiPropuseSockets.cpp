@@ -55,7 +55,10 @@ void Client::connectToHost()
     }
     else
     {
-        disconnect(&socket,SIGNAL(connected()),this,SLOT(connected())); //if not connected disconnect the signal
+        //if not connected disconnect the signal
+        disconnect(&socket,SIGNAL(connected()),
+                   this,SLOT(connected()));
+
         qDebug()<<"ERROR connecting to-> "<<host<<":"<<port;
     }
 }
@@ -63,6 +66,7 @@ void Client::connectToHost()
 void Client::connected()
 {
     qDebug()<<"CONECTED to -> "<<host<<":"<<port;
+    emit connectedToHost();
 }
 
 void Client::disconnected()

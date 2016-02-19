@@ -72,6 +72,7 @@ namespace Network
        int get_port()       { return port; }
 
     signals:
+       void connectedToHost();
 
     public slots:
        void	connected();
